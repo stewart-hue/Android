@@ -26,6 +26,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.stewarthue.redox.R
 import com.stewarthue.redox.ui.theme.Greenyellow2
 import com.stewarthue.redox.ui.theme.PurpleGrey40
@@ -34,7 +36,7 @@ import com.stewarthue.redox.ui.theme.newBlue
 
 @Composable
 
-fun AboutScreen (){
+fun AboutScreen (navController: NavController){
     Column(
         modifier = Modifier.fillMaxSize().background(color = Greenyellow2),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -141,5 +143,5 @@ fun AboutScreen (){
 @Composable
 
 fun AboutScreenPreview (){
-    AboutScreen()
+    AboutScreen(rememberNavController())
 }

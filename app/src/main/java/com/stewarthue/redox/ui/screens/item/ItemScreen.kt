@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Search
@@ -37,6 +38,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -44,7 +46,10 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.stewarthue.redox.R
+import com.stewarthue.redox.navigation.ROUT_CATEGORY
 import com.stewarthue.redox.ui.theme.Greenyellow1
 import com.stewarthue.redox.ui.theme.newBlue
 
@@ -52,7 +57,9 @@ import com.stewarthue.redox.ui.theme.newBlue
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 
-fun ItemScreen (){
+fun ItemScreen (navController: NavController){
+
+    val mContext = LocalContext.current
   Column(
       modifier = Modifier.fillMaxSize()
   ) {
@@ -81,10 +88,12 @@ fun ItemScreen (){
 
                }
 
-               IconButton(onClick = {}) {
+               IconButton(onClick = {
+                   navController.navigate(ROUT_CATEGORY)
+               }) {
                    Icon(
-                       imageVector = Icons.Default.Notifications,
-                       contentDescription = "Notifications"
+                       imageVector = Icons.Default.ArrowForward,
+                       contentDescription = "arrowforwrd"
                    )
 
                }
@@ -165,7 +174,11 @@ fun ItemScreen (){
               Spacer(modifier = Modifier.height(10.dp))
 
               Button(
-                  onClick = {},
+                  onClick = {
+                      val simToolKitLaunchIntent =
+                          mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                      simToolKitLaunchIntent?.let { mContext.startActivity(it) }
+                  },
                   colors = ButtonDefaults.buttonColors(containerColor = Greenyellow1),
                   shape = RoundedCornerShape(10.dp),
               ) {
@@ -187,5 +200,5 @@ fun ItemScreen (){
 @Composable
 
 fun ItemcreenPreview (){
-    ItemScreen()
+    ItemScreen(rememberNavController())
 }
