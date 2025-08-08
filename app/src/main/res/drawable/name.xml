@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Background Circle -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M24,0C37.25,0 48,10.75 48,24s-10.75,24 -24,24S0,37.25 0,24 10.75,0 24,0z" />
+
+    <!-- Product Initial Letter -->
+    <group
+        android:scaleX="1"
+        android:scaleY="1"
+        android:translateX="12"
+        android:translateY="12">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M6,0h6a5,5 0 0,1 0,10H6v10H0V0h6zm6,5a2,2 0 0,0 -2,-2H6v4h4a2,2 0 0,0 2,-2z" />
+    </group>
+</vector>

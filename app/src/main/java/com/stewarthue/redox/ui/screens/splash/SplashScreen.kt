@@ -26,87 +26,10 @@ import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.stewarthue.redox.R
-import com.stewarthue.redox.navigation.ROUT_HOME
+import com.stewarthue.redox.navigation.ROUT_LOGIN
 import com.stewarthue.redox.ui.theme.newBlue
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-
-//
-//@Composable
-//
-//fun SplashScreen (navController: NavController){
-//    Column(
-//        modifier = Modifier.fillMaxSize(),
-//        horizontalAlignment = Alignment.CenterHorizontally,
-//        verticalArrangement = Arrangement.Center
-//    ){
-//
-////        Lottie Animation
-//        val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.moon))
-//        val progress by animateLottieCompositionAsState(composition)
-//        LottieAnimation(composition, progress,
-//            modifier = Modifier.size(300.dp)
-//        )
-//
-////        Image(
-////            painter = painterResource(id = R.drawable.iconn),
-////            contentDescription = "product",
-////            modifier = Modifier.size(300.dp).clip(shape = CircleShape),
-//
-////        )
-////
-//
-//
-//        Spacer(modifier = Modifier.height(10.dp))
-//
-//
-//        Text(
-//            text = "Shop smart live better",
-//            fontSize =  18.sp,
-//            color = newBlue,
-////            fontWeight = FontWeight.Bold
-//            textAlign = TextAlign.Center
-//        )
-//
-//        Spacer(modifier = Modifier.height(10.dp))
-//
-//        Text(
-//            text = "Thousands of products at your fingertips.Great Deals.Fast Delivery",
-//            fontSize =  18.sp,
-//            color = newBlue,
-////            fontWeight = FontWeight.Bold
-//            textAlign = TextAlign.Center
-//        )
-//
-//        Spacer(modifier = Modifier.height(10.dp))
-//
-//
-//       CircularProgressIndicator(
-//           color = newBlue
-//       )
-//
-//
-//    }
-//
-//}
-//
-//@SuppressLint("CoroutineCreationDuringComposition")
-//@Preview(showBackground = true)
-//@Composable
-//
-//fun SplashScreenPreview (){
-//
-//    val coroutine = rememberCoroutineScope()
-//    coroutine.launch {
-//        delay(2000)
-//
-//
-//    }
-//
-//    SplashScreen(rememberNavController())
-//}
-
-
 
 
 @SuppressLint("CoroutineCreationDuringComposition")
@@ -116,7 +39,7 @@ fun SplashScreen(navController: NavController) {
     val coroutine = rememberCoroutineScope()
     coroutine.launch {
         delay(2000)
-        navController.navigate(ROUT_HOME)
+        navController.navigate(ROUT_LOGIN)
 
     }
     Column(
@@ -165,13 +88,7 @@ fun SplashScreen(navController: NavController) {
 fun SplashScreenPreview(){
     SplashScreen(rememberNavController())
 
-    val coroutine = rememberCoroutineScope()
-    coroutine.launch {
-        delay(2000)
 
-
-
-    }
 
 }
 

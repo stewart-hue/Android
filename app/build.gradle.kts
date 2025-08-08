@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id ("kotlin-kapt")
 }
 
 android {
@@ -66,5 +67,21 @@ dependencies {
 
     //Lottie Dependency
     implementation("com.airbnb.android:lottie-compose:4.2.0")
+
+    //Room Database
+    implementation("androidx.room:room-runtime:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    //End
+
+
+
+    // Image Loading (Coil for Jetpack Compose)
+    implementation ("io.coil-kt:coil-compose:2.4.0")
+
+    //Livedata
+    implementation("androidx.compose.runtime:runtime-livedata:1.6.7")
+
+
 
 }
